@@ -28,3 +28,16 @@ Once pushed, the brand guide will be live at:
 `https://brand.thecmg.co/client-folder-name`
 
 Example: `https://brand.thecmg.co/valley-spring`
+
+## Initial Setup (One-Time)
+
+To make `brand.thecmg.co` work, you must configure your domain's DNS settings:
+
+1.  **Go to your Domain Registrar** (e.g., GoDaddy, Namecheap, Google Domains).
+2.  **Add a CNAME Record**:
+    *   **Type**: `CNAME`
+    *   **Name/Host**: `brand`
+    *   **Value/Target**: `MJKHAN31.github.io`
+    *   **TTL**: Automatic or 1 hour
+
+Wait up to 24 hours for DNS changes to propagate.
