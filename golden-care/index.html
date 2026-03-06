@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Golden Care Therapy — Brand Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  /* ━━━ EXACT COLORS FROM goldencaretherapy.com ━━━ */
+  --navy:        #1A2B6B;   /* nav bar, hero background, dark sections */
+  --navy-dark:   #111D4E;   /* deeper navy variant */
+  --navy-light:  #2A3F8F;   /* slightly lighter navy */
+
+  --teal:        #3CBFAE;   /* PRIMARY — all CTA buttons, links, accents */
+  --teal-dark:   #2AA090;   /* button hover */
+  --teal-pale:   #E0F5F3;   /* teal tint backgrounds */
+
+  --coral:       #F4845F;   /* warm accent — illustrations, highlights */
+  --coral-pale:  #FEF0EA;
+
+  --yellow:      #F9C74F;   /* secondary warm accent */
+  --yellow-pale: #FEF7E0;
+
+  --white:       #FFFFFF;
+  --bg-soft:     #F7F8FC;   /* body background — barely-there blue-grey */
+  --bg-section:  #EEF1FA;   /* alternating section bg */
+
+  --text-h:      #1A2B6B;   /* headings — same as navy */
+  --text-b:      #4A5568;   /* body copy */
+  --text-m:      #8896B5;   /* muted labels */
+
+  --border:      rgba(26,43,107,0.1);
+  --shadow-sm:   0 2px 12px rgba(26,43,107,0.08);
+  --shadow-md:   0 6px 28px rgba(26,43,107,0.12);
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--bg-soft);
+  color: var(--text-h);
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width:5px; }
+::-webkit-scrollbar-track { background: var(--bg-section); }
+::-webkit-scrollbar-thumb { background: var(--teal); border-radius:99px; }
+
+/* ══════════════ NAV REPLICA ══════════════ */
+.site-nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--navy);
+  height: 68px;
+  display: flex; align-items: center;
+  padding: 0 52px;
+  gap: 40px;
+  box-shadow: 0 2px 20px rgba(0,0,0,0.25);
+}
+
+.nav-logo {
+  font-weight: 800; font-size: 17px; color: #fff;
+  letter-spacing: -0.01em; white-space: nowrap;
+}
+
+.nav-links {
+  display: flex; gap: 24px; list-style: none; flex: 1;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.72); font-size: 13px;
+  font-weight: 600; text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: #fff; }
+
+.nav-phone {
+  font-size: 13px; font-weight: 700;
+  color: rgba(255,255,255,0.6);
+}
+
+.nav-cta {
+  background: var(--teal); color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px; font-weight: 700;
+  padding: 10px 22px; border-radius: 99px;
+  border: none; cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.2s, transform 0.15s;
+}
+.nav-cta:hover { background: var(--teal-dark); transform: translateY(-1px); }
+
+/* ══════════════ HERO ══════════════ */
+.hero {
+  background: var(--navy);
+  min-height: 88vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  position: relative; overflow: hidden;
+  padding: 90px 40px;
+}
+
+/* Subtle geometric circles — matches site aesthetic */
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 700px; height: 700px; border-radius: 50%;
+  border: 1.5px solid rgba(60,191,174,0.12);
+  top: -200px; right: -220px;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 460px; height: 460px; border-radius: 50%;
+  border: 1.5px solid rgba(255,255,255,0.05);
+  bottom: -120px; left: -150px;
+}
+
+.hero-blob {
+  position: absolute;
+  width: 300px; height: 300px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(60,191,174,0.1), transparent 70%);
+  top: 50%; left: 5%; transform: translateY(-50%);
+}
+
+.hero-inner { position: relative; z-index: 2; max-width: 720px; }
+
+.hero-pill {
+  display: inline-block;
+  background: rgba(60,191,174,0.15);
+  border: 1px solid rgba(60,191,174,0.35);
+  color: var(--teal);
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  padding: 7px 20px; border-radius: 99px;
+  margin-bottom: 30px;
+  opacity: 0; animation: rise 0.55s ease forwards 0.1s;
+}
+
+.hero-h1 {
+  font-size: clamp(48px, 7.5vw, 80px);
+  font-weight: 900; color: #fff;
+  line-height: 1.06; margin-bottom: 18px;
+  opacity: 0; animation: rise 0.55s ease forwards 0.25s;
+}
+
+.hero-h1 em { color: var(--teal); font-style: normal; }
+
+.hero-rule {
+  width: 56px; height: 3px; border-radius: 99px;
+  background: var(--teal);
+  margin: 0 auto 22px;
+  opacity: 0; animation: rise 0.55s ease forwards 0.4s;
+}
+
+.hero-sub {
+  font-size: clamp(15px, 2vw, 18px);
+  font-weight: 400; font-style: italic;
+  color: rgba(255,255,255,0.58);
+  line-height: 1.7; margin-bottom: 40px;
+  opacity: 0; animation: rise 0.55s ease forwards 0.5s;
+}
+
+.hero-tags {
+  display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+  opacity: 0; animation: rise 0.55s ease forwards 0.65s;
+}
+
+.hero-tag {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.13);
+  color: rgba(255,255,255,0.7);
+  font-size: 12px; font-weight: 600;
+  padding: 7px 16px; border-radius: 99px;
+}
+
+@keyframes rise {
+  from { opacity:0; transform:translateY(16px); }
+  to   { opacity:1; transform:translateY(0); }
+}
+
+/* ══════════════ LAYOUT ══════════════ */
+.w { max-width: 1240px; margin: 0 auto; padding: 0 52px; }
+.sec { padding: 88px 0; }
+.sec-alt { background: var(--bg-section); }
+.sec-navy { background: var(--navy); }
+
+hr.rule { border: none; height: 1px; background: var(--border); margin: 0 52px; }
+
+.ey {
+  font-size: 11px; font-weight: 800;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--teal); margin-bottom: 12px;
+}
+.sec-navy .ey { color: var(--teal); }
+
+.sh {
+  font-size: clamp(30px, 3.8vw, 46px);
+  font-weight: 800; color: var(--text-h);
+  line-height: 1.15; margin-bottom: 16px;
+}
+.sec-navy .sh { color: #fff; }
+
+.sd {
+  font-size: 15px; line-height: 1.8;
+  color: var(--text-b); max-width: 600px;
+  margin-bottom: 52px;
+}
+.sec-navy .sd { color: rgba(255,255,255,0.45); }
+
+/* ══════════════ COLOR SWATCHES ══════════════ */
+.swatches {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 18px;
+}
+
+.sw {
+  border-radius: 14px; overflow: hidden;
+  transition: transform 0.22s, box-shadow 0.22s;
+  cursor: default;
+}
+.sw:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.28); }
+
+.sw-c { height: 116px; }
+
+.sw-i {
+  padding: 16px 18px;
+  background: rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.sw-n { font-weight: 800; font-size: 15px; color: #fff; margin-bottom: 3px; }
+.sw-u { font-size: 11px; color: rgba(255,255,255,0.42); line-height: 1.5; margin-bottom: 10px; }
+.sw-h { font-family: 'Courier New', monospace; font-size: 12px; color: var(--teal); }
+
+/* light swatch */
+.sw-light .sw-n { color: var(--text-h); }
+.sw-light .sw-u { color: var(--text-m); }
+.sw-light .sw-h { color: var(--teal-dark); }
+.sw-light .sw-i { background: rgba(0,0,0,0.03); border-color: var(--border); }
+
+.grad-strips {
+  display: flex; gap: 14px; flex-wrap: wrap;
+  margin-top: 30px;
+}
+.grad-strip { flex: 1; min-width: 170px; border-radius: 10px; overflow: hidden; }
+.grad-bar { height: 44px; }
+.grad-lbl {
+  padding: 9px 13px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-top: none; border-radius: 0 0 10px 10px;
+  font-size: 11px; color: rgba(255,255,255,0.38);
+}
+
+/* ══════════════ TYPOGRAPHY ══════════════ */
+.type-cards {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 26px;
+}
+@media(max-width:780px) { .type-cards { grid-template-columns: 1fr; } }
+
+.tc {
+  background: #fff; border-radius: 18px;
+  padding: 40px; border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  position: relative; overflow: hidden;
+}
+.tc::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 4px;
+  border-radius: 18px 18px 0 0;
+}
+.tc.primary::before { background: var(--navy); }
+.tc.accent::before  { background: linear-gradient(90deg, var(--teal), var(--coral)); }
+
+.ft { font-size: 10px; font-weight: 700; letter-spacing: 0.28em;
+  text-transform: uppercase; color: var(--text-m); margin-bottom: 18px; }
+
+.fd-big {
+  font-family: 'Nunito', sans-serif;
+  font-size: 54px; font-weight: 900;
+  color: var(--navy); line-height: 1.0; margin-bottom: 12px;
+}
+
+.fd-italic {
+  font-family: 'Nunito', sans-serif;
+  font-size: 40px; font-weight: 300; font-style: italic;
+  color: var(--teal); line-height: 1.1; margin-bottom: 12px;
+}
+
+.fn { font-size: 13px; line-height: 1.7; color: var(--text-b); margin-bottom: 24px; }
+
+.sc { padding: 9px 0; border-bottom: 1px solid var(--border);
+  display: flex; align-items: baseline; gap: 16px; }
+.sc:last-child { border-bottom: none; }
+.sz { font-family: 'Courier New', monospace; font-size: 10px;
+  color: var(--text-m); min-width: 42px; }
+
+/* ══════════════ VOICE CARDS ══════════════ */
+.voice-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 18px;
+}
+@media(max-width:880px) { .voice-grid { grid-template-columns: 1fr 1fr; } }
+
+.vc {
+  background: #fff; border-radius: 16px; padding: 28px;
+  border: 1.5px solid var(--border); box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+.vc:hover {
+  border-color: var(--teal); transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(26,43,107,0.1);
+}
+
+.vc-ico { font-size: 26px; margin-bottom: 13px; }
+.vc-t { font-weight: 800; font-size: 16px; color: var(--text-h); margin-bottom: 8px; }
+.vc-b { font-size: 13px; line-height: 1.7; color: var(--text-b); margin-bottom: 16px; }
+.vc-sep { height: 1px; background: var(--border); margin-bottom: 14px; }
+
+.do, .no {
+  font-size: 12px; line-height: 1.55; margin-bottom: 7px;
+  padding-left: 16px; position: relative;
+}
+.do::before { content:'✓'; position:absolute; left:0; color:var(--teal); font-weight:800; }
+.no::before { content:'✗'; position:absolute; left:0; color:var(--coral); font-weight:800; }
+.do { color: var(--teal-dark); }
+.no { color: #a03a25; }
+
+/* ══════════════ LOGO CARDS ══════════════ */
+.logo-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+@media(max-width:880px) { .logo-grid { grid-template-columns: 1fr; } }
+
+.lc { border-radius: 18px; overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+.ld { height: 168px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 6px; }
+.lw { font-weight: 900; font-size: 20px; line-height: 1; }
+.ls { font-size: 10px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; }
+.lcap { padding: 16px 20px; background: #fff; }
+.lcap-n { font-weight: 800; font-size: 13px; color: var(--text-h); margin-bottom: 3px; }
+.lcap-d { font-size: 12px; color: var(--text-m); line-height: 1.5; }
+
+/* ══════════════ UI COMPONENTS ══════════════ */
+.comp-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 52px; }
+@media(max-width:780px) { .comp-cols { grid-template-columns: 1fr; } }
+
+.cl { font-size: 10px; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--text-m);
+  margin-bottom: 16px; padding-bottom: 10px;
+  border-bottom: 1px solid var(--border); }
+
+.cg { margin-bottom: 30px; }
+
+/* Buttons */
+.br { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 11px 24px; border-radius: 99px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 13px; font-weight: 700;
+  border: none; cursor: pointer;
+  transition: all 0.18s ease;
+}
+.b-teal  { background: var(--teal); color: #fff;
+  box-shadow: 0 4px 16px rgba(60,191,174,0.38); }
+.b-teal:hover { background: var(--teal-dark); transform: translateY(-2px); }
+.b-navy  { background: var(--navy); color: #fff; }
+.b-navy:hover { background: var(--navy-light); transform: translateY(-2px); }
+.b-out   { background: transparent; color: var(--navy);
+  border: 2px solid var(--navy); }
+.b-out:hover { background: var(--bg-section); transform: translateY(-2px); }
+.b-coral { background: var(--coral); color: #fff; }
+.b-coral:hover { background: #e26c48; transform: translateY(-2px); }
+
+/* Badges */
+.badrow { display: flex; flex-wrap: wrap; gap: 8px; }
+.bad {
+  display: inline-flex; align-items: center;
+  padding: 5px 13px; border-radius: 99px;
+  font-size: 11px; font-weight: 700;
+}
+.bad-teal  { background: var(--teal-pale); color: var(--teal-dark); }
+.bad-navy  { background: var(--bg-section); color: var(--navy); }
+.bad-coral { background: var(--coral-pale); color: #b04a2a; }
+.bad-yel   { background: var(--yellow-pale); color: #8a6a10; }
+
+/* Card */
+.ccard {
+  background: #fff; border-radius: 14px; padding: 22px;
+  border: 1px solid var(--border); box-shadow: var(--shadow-sm);
+  margin-bottom: 13px;
+}
+.cce { font-size: 10px; font-weight: 700; letter-spacing: .2em;
+  text-transform: uppercase; color: var(--teal); margin-bottom: 8px; }
+.cch { font-weight: 800; font-size: 16px; color: var(--text-h); margin-bottom: 7px; }
+.ccb { font-size: 13px; line-height: 1.7; color: var(--text-b); }
+
+/* Input */
+.inp {
+  width: 100%; padding: 12px 16px;
+  border: 1.5px solid var(--border); border-radius: 10px;
+  font-family: 'Nunito', sans-serif; font-size: 13px;
+  color: var(--text-h); background: #fff;
+  margin-bottom: 9px; outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.inp:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px rgba(60,191,174,0.15);
+}
+
+/* Testimonial */
+.testi {
+  background: #fff; border-radius: 16px; padding: 28px;
+  border-left: 4px solid var(--teal);
+  box-shadow: var(--shadow-sm);
+}
+.tq {
+  font-style: italic; font-size: 15px;
+  color: var(--text-b); line-height: 1.8; margin-bottom: 14px;
+}
+.ta {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--text-m);
+}
+
+/* ══════════════ TAGLINES ══════════════ */
+.tag-list { max-width: 880px; }
+.ti {
+  display: flex; align-items: flex-start; gap: 22px;
+  padding: 26px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.tn {
+  font-family: 'Courier New', monospace;
+  font-size: 12px; color: rgba(255,255,255,0.22);
+  min-width: 24px; margin-top: 5px;
+}
+.tq-big {
+  font-size: clamp(20px, 2.6vw, 32px);
+  font-weight: 700; color: #fff;
+  line-height: 1.3; margin-bottom: 6px;
+}
+.tq-big em { color: var(--teal); font-style: normal; }
+.tq-big span { color: var(--coral); }
+.tw {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  font-family: 'Courier New', monospace;
+}
+
+/* ══════════════ IMAGERY ══════════════ */
+.img-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+@media(max-width:780px) { .img-grid { grid-template-columns: 1fr; } }
+
+.imgc { border-radius: 18px; padding: 32px; border: 1px solid transparent; }
+.imgc.do-card  { background: var(--teal-pale); border-color: rgba(60,191,174,0.3); }
+.imgc.no-card  { background: var(--coral-pale); border-color: rgba(244,132,95,0.28); }
+
+.ih { display: flex; align-items: center; gap: 10px; margin-bottom: 18px; }
+.idot {
+  width: 26px; height: 26px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-weight: 800; color: #fff;
+}
+.idot.d { background: var(--teal); }
+.idot.n { background: var(--coral); }
+.ititle { font-weight: 800; font-size: 17px; color: var(--text-h); }
+
+.ilist { list-style: none; }
+.ilist li {
+  font-size: 13px; line-height: 1.7;
+  color: var(--text-b); padding: 7px 0 7px 16px;
+  border-bottom: 1px solid rgba(0,0,0,0.055);
+  position: relative;
+}
+.ilist li::before { content:'→'; position:absolute; left:0; }
+.do-card .ilist li::before { color: var(--teal); }
+.no-card .ilist li::before { color: var(--coral); }
+
+/* ══════════════ PROCESS STEPS ══════════════ */
+.steps { display: grid; grid-template-columns: repeat(4,1fr); gap: 18px; }
+@media(max-width:880px) { .steps { grid-template-columns: 1fr 1fr; } }
+
+.step {
+  background: #fff; border-radius: 16px;
+  padding: 28px 22px; border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm); text-align: center;
+}
+.snum {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy), var(--teal));
+  color: #fff; font-weight: 900; font-size: 17px;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 15px;
+}
+.st { font-weight: 800; font-size: 14px; color: var(--text-h); margin-bottom: 8px; }
+.sd2 { font-size: 12px; line-height: 1.65; color: var(--text-b); }
+
+/* ══════════════ SPACING ══════════════ */
+.sp-table { border: 1px solid var(--border); border-radius: 12px; overflow: hidden; }
+.sp-row {
+  display: flex; align-items: center; gap: 20px;
+  padding: 14px 22px; border-bottom: 1px solid var(--border);
+}
+.sp-row:last-child { border-bottom: none; }
+.sp-row:nth-child(even) { background: var(--bg-section); }
+.sp-tok { font-family: 'Courier New', monospace; font-size: 12px;
+  color: var(--teal-dark); min-width: 90px; }
+.sp-bar-w { flex: 1; height: 20px; background: var(--teal-pale);
+  border-radius: 4px; overflow: hidden; }
+.sp-bar { height: 100%; background: linear-gradient(90deg,var(--navy),var(--teal));
+  border-radius: 4px; }
+.sp-val { font-family: 'Courier New', monospace; font-size: 11px;
+  color: var(--text-m); min-width: 48px; text-align: right; }
+
+/* ══════════════ FOOTER ══════════════ */
+.footer {
+  background: var(--navy-dark); padding: 50px 52px;
+  display: flex; align-items: center;
+  justify-content: space-between; flex-wrap: wrap; gap: 20px;
+}
+.fl { font-weight: 900; font-size: 22px; color: #fff; }
+.fl em { color: var(--teal); font-style: normal; }
+.fs { font-size: 12px; color: rgba(255,255,255,0.3); margin-top: 5px; }
+.fm {
+  font-family: 'Courier New', monospace;
+  font-size: 10px; color: rgba(255,255,255,0.2);
+  text-align: right; line-height: 2.2; letter-spacing: .05em;
+}
+
+@media(max-width:768px) {
+  .w { padding: 0 24px; }
+  hr.rule { margin: 0 24px; }
+  .footer { padding: 40px 24px; }
+  .site-nav { padding: 0 24px; }
+  .site-nav .nav-links, .nav-phone { display: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ━━━ STICKY NAV ━━━ -->
+<nav class="site-nav">
+  <div class="nav-logo">Golden Care Therapy</div>
+  <ul class="nav-links">
+    <li><a href="#">About</a></li>
+    <li><a href="#">ABA Therapy</a></li>
+    <li><a href="#">Locations</a></li>
+    <li><a href="#">Careers</a></li>
+    <li><a href="#">Blog</a></li>
+    <li><a href="#">Contact Us</a></li>
+  </ul>
+  <span class="nav-phone">732-800-9616</span>
+  <button class="nav-cta">Enroll Today</button>
+</nav>
+
+<!-- ━━━ HERO ━━━ -->
+<section class="hero">
+  <div class="hero-blob"></div>
+  <div class="hero-inner">
+    <div class="hero-pill">Brand Style Guide · 2026 Edition</div>
+    <h1 class="hero-h1">Golden Care<br><em>Therapy</em></h1>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">"Some days feel joyful, and some feel heavy,<br>but you always show up for your child. We do too."</p>
+    <div class="hero-tags">
+      <span class="hero-tag">NJ · NY · FL · GA · IN</span>
+      <span class="hero-tag">In-Home ABA</span>
+      <span class="hero-tag">Founded 2016</span>
+      <span class="hero-tag">BCBA Supervised</span>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━ COLORS ━━━ -->
+<section class="sec sec-navy">
+  <div class="w">
+    <p class="ey">01 — Color System</p>
+    <h2 class="sh">The Brand Palette</h2>
+    <p class="sd">These are the exact colors from goldencaretherapy.com. Navy is the identity. Teal drives every action. Coral and yellow warm it up. Never substitute.</p>
+
+    <div class="swatches">
+      <div class="sw">
+        <div class="sw-c" style="background:linear-gradient(145deg,#1A2B6B,#111D4E);"></div>
+        <div class="sw-i">
+          <div class="sw-n">Brand Navy</div>
+          <div class="sw-u">Nav, hero backgrounds, dark sections, heading text.</div>
+          <div class="sw-h">#1A2B6B</div>
+        </div>
+      </div>
+      <div class="sw">
+        <div class="sw-c" style="background:linear-gradient(145deg,#3CBFAE,#2AA090);"></div>
+        <div class="sw-i">
+          <div class="sw-n">Action Teal</div>
+          <div class="sw-u">ALL primary CTAs. "Enroll Today", "Get Started", "Verify Insurance". No exceptions.</div>
+          <div class="sw-h">#3CBFAE</div>
+        </div>
+      </div>
+      <div class="sw">
+        <div class="sw-c" style="background:linear-gradient(145deg,#F4845F,#D96840);"></div>
+        <div class="sw-i">
+          <div class="sw-n">Warm Coral</div>
+          <div class="sw-u">Accent illustrations, icon fills, warm highlights. Never CTA buttons.</div>
+          <div class="sw-h">#F4845F</div>
+        </div>
+      </div>
+      <div class="sw">
+        <div class="sw-c" style="background:linear-gradient(145deg,#F9C74F,#E0A830);"></div>
+        <div class="sw-i">
+          <div class="sw-n">Sunshine Yellow</div>
+          <div class="sw-u">Tertiary accent. Step numbers, callouts, celebration moments.</div>
+          <div class="sw-h">#F9C74F</div>
+        </div>
+      </div>
+      <div class="sw">
+        <div class="sw-c" style="background:linear-gradient(145deg,#E0F5F3,#C0EAE6);"></div>
+        <div class="sw-i sw-light">
+          <div class="sw-n">Teal Pale</div>
+          <div class="sw-u">Section backgrounds, ghost button fills, success states.</div>
+          <div class="sw-h">#E0F5F3</div>
+        </div>
+      </div>
+      <div class="sw">
+        <div class="sw-c" style="background:linear-gradient(145deg,#EEF1FA,#DDE3F4);"></div>
+        <div class="sw-i sw-light">
+          <div class="sw-n">Section Blue-Grey</div>
+          <div class="sw-u">Alternating section backgrounds. Cards. The site's off-white.</div>
+          <div class="sw-h">#EEF1FA</div>
+        </div>
+      </div>
+      <div class="sw">
+        <div class="sw-c" style="background:linear-gradient(145deg,#FFFFFF,#F7F8FC);"></div>
+        <div class="sw-i sw-light">
+          <div class="sw-n">White / Off-White</div>
+          <div class="sw-u">Card surfaces, form backgrounds, primary body bg.</div>
+          <div class="sw-h">#F7F8FC</div>
+        </div>
+      </div>
+      <div class="sw">
+        <div class="sw-c" style="background:linear-gradient(145deg,#4A5568,#374155);"></div>
+        <div class="sw-i">
+          <div class="sw-n">Body Text</div>
+          <div class="sw-u">All body copy, descriptions, card text, FAQ answers.</div>
+          <div class="sw-h">#4A5568</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grad-strips">
+      <div class="grad-strip">
+        <div class="grad-bar" style="background:linear-gradient(90deg,#1A2B6B,#3CBFAE);"></div>
+        <div class="grad-lbl">Brand Gradient — Step indicators, progress bars, hero accents</div>
+      </div>
+      <div class="grad-strip">
+        <div class="grad-bar" style="background:linear-gradient(90deg,#1A2B6B,#2A3F8F,#1A2B6B);"></div>
+        <div class="grad-lbl">Navy Range — Nav, dark hero overlays, footer</div>
+      </div>
+      <div class="grad-strip">
+        <div class="grad-bar" style="background:linear-gradient(90deg,#F4845F,#F9C74F);"></div>
+        <div class="grad-lbl">Warm Accent Range — Illustrations, icon gradients</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ━━━ TYPOGRAPHY ━━━ -->
+<section class="sec sec-alt">
+  <div class="w">
+    <p class="ey">02 — Typography</p>
+    <h2 class="sh">Type System</h2>
+    <p class="sd">Nunito for everything — the rounded, friendly forms match the brand's warmth exactly. Bold weights for impact, light italic for emotional moments. Never use generic system fonts.</p>
+
+    <div class="type-cards">
+      <div class="tc primary">
+        <div class="ft">Primary — Nunito (All UI, All Headings, All Body)</div>
+        <div class="fd-big">Golden<br>Care</div>
+        <p class="fn">Used for: every element on the site. H1 at 900 weight, body at 400. Rounded geometric letterforms match the friendly, approachable ABA brand.</p>
+        <div class="sc"><span class="sz">72px</span><span style="font-size:26px;font-weight:900;color:var(--navy);">Hero H1 — Black 900</span></div>
+        <div class="sc"><span class="sz">44px</span><span style="font-size:20px;font-weight:800;color:var(--navy);">Section Title — ExtraBold 800</span></div>
+        <div class="sc"><span class="sz">24px</span><span style="font-size:16px;font-weight:700;color:var(--navy);">Card Heading — Bold 700</span></div>
+        <div class="sc"><span class="sz">16px</span><span style="font-size:14px;font-weight:400;color:var(--text-b);">Body Copy — Regular 400</span></div>
+        <div class="sc"><span class="sz">11px</span><span style="font-size:11px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);">EYEBROW LABEL — 800</span></div>
+      </div>
+
+      <div class="tc accent">
+        <div class="ft">Accent — Nunito Italic (Emotional Moments Only)</div>
+        <div class="fd-italic">"We always<br>show up."</div>
+        <p class="fn">Used for: hero subheadings, pull quotes, testimonials. Light or regular italic weight only. Never for nav, body paragraphs, or functional UI.</p>
+
+        <div style="background:var(--teal-pale);border-radius:12px;padding:20px;margin-bottom:14px;">
+          <p style="font-style:italic;font-size:15px;font-weight:300;color:var(--navy);line-height:1.75;">"Some days feel joyful, and some feel heavy, but you always show up for your child. At Golden Care Therapy, we do too."</p>
+          <p style="font-size:10px;color:var(--text-m);margin-top:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;">Hero Subheading — Nunito Light Italic 300</p>
+        </div>
+
+        <div style="background:var(--coral-pale);border-radius:10px;padding:14px;border:1px solid rgba(244,132,95,0.25);">
+          <p style="font-size:12px;color:#a03a25;font-weight:700;">⚠ Italic is for emotional beats only — never navigation, buttons, body paragraphs, or UI copy.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ━━━ VOICE & TONE ━━━ -->
+<section class="sec">
+  <div class="w">
+    <p class="ey">03 — Voice & Tone</p>
+    <h2 class="sh">How We Sound</h2>
+    <p class="sd">Every word on goldencaretherapy.com speaks to an exhausted, hopeful parent. The voice is a trusted guide — never a salesperson, never clinical, never a stranger.</p>
+
+    <div class="voice-grid">
+      <div class="vc">
+        <div class="vc-ico">💙</div>
+        <div class="vc-t">Warm & Real</div>
+        <div class="vc-b">Acknowledge the weight of the journey. Speak like a friend who is also an expert — not a brochure.</div>
+        <div class="vc-sep"></div>
+        <div class="do">"Some days feel heavy. We show up on all of them."</div>
+        <div class="no">"Unlock your child's full potential!"</div>
+      </div>
+      <div class="vc">
+        <div class="vc-ico">🧭</div>
+        <div class="vc-t">Guide, Don't Pitch</div>
+        <div class="vc-b">Parents are overwhelmed. Give one clear next step. Remove friction — never add pressure or urgency.</div>
+        <div class="vc-sep"></div>
+        <div class="do">"We handle insurance so you can focus on your child."</div>
+        <div class="no">"Limited spots — act before it's too late!"</div>
+      </div>
+      <div class="vc">
+        <div class="vc-ico">🏡</div>
+        <div class="vc-t">Home is the Hero</div>
+        <div class="vc-b">In-home delivery is the core differentiator. Familiar environments = faster progress. Say it on every page.</div>
+        <div class="vc-sep"></div>
+        <div class="do">"We come to you. Your child learns where they feel safest."</div>
+        <div class="no">"Visit our therapy center for treatment."</div>
+      </div>
+      <div class="vc">
+        <div class="vc-ico">👨‍👩‍👧</div>
+        <div class="vc-t">Family as Partner</div>
+        <div class="vc-b">Parents are trained, included, empowered. ABA is a team effort. Use "we" and "together" throughout.</div>
+        <div class="vc-sep"></div>
+        <div class="do">"We train you in the same strategies. You're on the team."</div>
+        <div class="no">"Leave it to the professionals."</div>
+      </div>
+      <div class="vc">
+        <div class="vc-ico">📋</div>
+        <div class="vc-t">Plain over Clinical</div>
+        <div class="vc-b">ABA is science but speak in outcomes. If a parent Googles the word, rewrite the sentence.</div>
+        <div class="vc-sep"></div>
+        <div class="do">"Proven strategies. Real results. One step at a time."</div>
+        <div class="no">"Antecedent-based DTT protocol interventions."</div>
+      </div>
+      <div class="vc">
+        <div class="vc-ico">🌱</div>
+        <div class="vc-t">Progress, Not Cure</div>
+        <div class="vc-b">Never imply "fixing" autism. Frame as growth, independence, and meaningful steps forward.</div>
+        <div class="vc-sep"></div>
+        <div class="do">"ABA isn't about changing who your child is."</div>
+        <div class="no">"Eliminate problem behaviors for good."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ━━━ LOGO ━━━ -->
+<section class="sec sec-alt">
+  <div class="w">
+    <p class="ey">04 — Logo & Wordmark</p>
+    <h2 class="sh">Brand Mark</h2>
+    <p class="sd">The wordmark is Nunito ExtraBold 800, title case. Clear space = cap-height on all four sides minimum. The teal CTA color does not appear in the logo.</p>
+
+    <div class="logo-grid">
+      <div class="lc">
+        <div class="ld" style="background:#F7F8FC;">
+          <div class="lw" style="color:var(--navy);">Golden Care Therapy</div>
+          <div class="ls" style="color:var(--text-m);">In-Home ABA Therapy</div>
+        </div>
+        <div class="lcap">
+          <div class="lcap-n">Primary — Light Background</div>
+          <div class="lcap-d">Default use. Full navy on off-white or white.</div>
+        </div>
+      </div>
+      <div class="lc">
+        <div class="ld" style="background:var(--navy);">
+          <div class="lw" style="color:#fff;">Golden Care Therapy</div>
+          <div class="ls" style="color:rgba(255,255,255,0.38);">In-Home ABA Therapy</div>
+        </div>
+        <div class="lcap">
+          <div class="lcap-n">Reversed — Dark Background</div>
+          <div class="lcap-d">Nav bar, hero sections, dark overlays, photography.</div>
+        </div>
+      </div>
+      <div class="lc">
+        <div class="ld" style="background:linear-gradient(135deg,#1A2B6B,#3CBFAE);">
+          <div class="lw" style="color:#fff;">Golden Care Therapy</div>
+          <div class="ls" style="color:rgba(255,255,255,0.5);">In-Home ABA Therapy</div>
+        </div>
+        <div class="lcap">
+          <div class="lcap-n">Gradient — Special Use Only</div>
+          <div class="lcap-d">Social assets, OG images, branded materials only.</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:26px;padding:22px 26px;background:var(--coral-pale);border:1px solid rgba(244,132,95,0.28);border-radius:14px;">
+      <p style="font-size:10px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--coral);margin-bottom:10px;">⚠ Never Do This</p>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;font-size:13px;color:var(--text-b);">
+        <span>✗ Stretch or distort the wordmark</span>
+        <span>✗ Use teal color inside the logo</span>
+        <span>✗ Place on busy photos without overlay</span>
+        <span>✗ Add drop shadows to the text</span>
+        <span>✗ ALL CAPS — title case always</span>
+        <span>✗ Place on low-contrast blue-grey backgrounds</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ━━━ COMPONENTS ━━━ -->
+<section class="sec">
+  <div class="w">
+    <p class="ey">05 — UI Components</p>
+    <h2 class="sh">Building Blocks</h2>
+    <p class="sd">Rounded corners everywhere — 99px on buttons/badges, 14–18px on cards. Teal for all primary actions. Navy for secondary. Coral and yellow for accents only.</p>
+
+    <div class="comp-cols">
+      <div>
+        <div class="cg">
+          <div class="cl">Buttons</div>
+          <div class="br">
+            <button class="btn b-teal">Enroll Today →</button>
+            <button class="btn b-navy">Learn More</button>
+            <button class="btn b-out">View Locations</button>
+            <button class="btn b-coral">Contact Us</button>
+          </div>
+        </div>
+
+        <div class="cg">
+          <div class="cl">Badges & Tags</div>
+          <div class="badrow">
+            <span class="bad bad-teal">In-Home ABA</span>
+            <span class="bad bad-navy">Insurance Accepted</span>
+            <span class="bad bad-coral">BCBA Supervised</span>
+            <span class="bad bad-yel">Ages 2–18</span>
+            <span class="bad bad-teal">New Jersey</span>
+            <span class="bad bad-navy">Family-Centered</span>
+          </div>
+        </div>
+
+        <div class="cg">
+          <div class="cl">Contact Form (as shown on site)</div>
+          <input class="inp" type="text" placeholder="Parent First Name *">
+          <input class="inp" type="text" placeholder="Child First Name *">
+          <input class="inp" type="email" placeholder="Email Address *">
+          <input class="inp" type="tel" placeholder="Phone Number *">
+          <select class="inp">
+            <option>Select Your State *</option>
+            <option>New Jersey</option>
+            <option>New York</option>
+            <option>Florida</option>
+            <option>Georgia</option>
+            <option>Indiana</option>
+          </select>
+          <button class="btn b-teal" style="width:100%;justify-content:center;">Get In Touch Today →</button>
+        </div>
+      </div>
+
+      <div>
+        <div class="cg">
+          <div class="cl">Content Cards</div>
+          <div class="ccard">
+            <div class="cce">In-Home ABA Therapy</div>
+            <div class="cch">Your Child Learns Best at Home</div>
+            <div class="ccb">We bring certified ABA therapy directly to your door. Familiar environments accelerate learning and reduce anxiety — for your child and your family.</div>
+          </div>
+          <div class="ccard" style="border-left:3px solid var(--teal);">
+            <div class="cce">Insurance</div>
+            <div class="cch">We Handle the Paperwork</div>
+            <div class="ccb">We verify coverage and explain your benefits in plain language. Most major insurance accepted across all 5 states.</div>
+          </div>
+        </div>
+
+        <div class="cg">
+          <div class="cl">Testimonial</div>
+          <div class="testi">
+            <p class="tq">"Golden Care not only provided therapy, but more importantly, support and kindness throughout my journey."</p>
+            <p class="ta">Verified Parent · New Jersey</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ━━━ TAGLINES ━━━ -->
+<section class="sec sec-navy">
+  <div class="w">
+    <p class="ey">06 — Approved Copy & Taglines</p>
+    <h2 class="sh">Words That Convert</h2>
+    <p class="sd">Pulled directly from the live site or built exactly on its copy patterns. Use verbatim — escalate before changing.</p>
+
+    <div class="tag-list">
+      <div class="ti">
+        <span class="tn">01</span>
+        <div>
+          <div class="tq-big">Family-Centered ABA <em>Rooted in Care</em></div>
+          <div class="tw">H1 Hero · All Markets · Primary Headline</div>
+        </div>
+      </div>
+      <div class="ti">
+        <span class="tn">02</span>
+        <div>
+          <div class="tq-big">Some days feel heavy. <em>We show up on all of them.</em></div>
+          <div class="tw">Meta / Facebook Ads · Emotional Hook</div>
+        </div>
+      </div>
+      <div class="ti">
+        <span class="tn">03</span>
+        <div>
+          <div class="tq-big">We meet your child <em>where they feel most comfortable.</em></div>
+          <div class="tw">In-Home Differentiator · Google Ads H1</div>
+        </div>
+      </div>
+      <div class="ti">
+        <span class="tn">04</span>
+        <div>
+          <div class="tq-big"><span>You don't have to carry it all.</span> We guide you through every step.</div>
+          <div class="tw">Overwhelmed Parent Segment · Landing Page</div>
+        </div>
+      </div>
+      <div class="ti">
+        <span class="tn">05</span>
+        <div>
+          <div class="tq-big">ABA therapy is a <em>team effort,</em> grounded in trust and compassion.</div>
+          <div class="tw">Why Choose Us Section · Website Body</div>
+        </div>
+      </div>
+      <div class="ti">
+        <span class="tn">06</span>
+        <div>
+          <div class="tq-big">One small success at a time. <em>Every day.</em></div>
+          <div class="tw">Email Subject Lines · Social Captions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ━━━ IMAGERY ━━━ -->
+<section class="sec">
+  <div class="w">
+    <p class="ey">07 — Photography</p>
+    <h2 class="sh">What We Show</h2>
+    <p class="sd">Every image should make a parent feel seen, hopeful, and not alone. Photography is the highest-trust signal in ABA marketing.</p>
+
+    <div class="img-grid">
+      <div class="imgc do-card">
+        <div class="ih">
+          <div class="idot d">✓</div>
+          <div class="ititle">Use These</div>
+        </div>
+        <ul class="ilist">
+          <li>Warm natural light in home settings — living rooms, kitchens, backyards</li>
+          <li>Therapist and child in genuine interaction, never posed</li>
+          <li>Parent actively participating in or observing a session</li>
+          <li>Candid emotion: focus, curiosity, small wins</li>
+          <li>Racially diverse families across all 5 states</li>
+          <li>Warm color grading matching the navy/teal brand tones</li>
+          <li>Children ages 2–12 predominantly</li>
+          <li>Real clinic interior photos for Oradell, NJ only</li>
+        </ul>
+      </div>
+      <div class="imgc no-card">
+        <div class="ih">
+          <div class="idot n">✗</div>
+          <div class="ititle">Never Use</div>
+        </div>
+        <ul class="ilist">
+          <li>Sterile white clinical rooms, lab coats, hospital settings</li>
+          <li>Obvious stock photos with unnatural smiles</li>
+          <li>Puzzle piece imagery — problematic in autism community</li>
+          <li>Imagery implying "curing" or "fixing" autism</li>
+          <li>Children crying or in visible distress</li>
+          <li>Cold or desaturated color grading</li>
+          <li>Heavily staged studio-lit family portraits</li>
+          <li>Competitor branding visible anywhere in frame</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ━━━ PROCESS ━━━ -->
+<section class="sec sec-alt">
+  <div class="w">
+    <p class="ey">08 — Patient Journey</p>
+    <h2 class="sh">The 4-Step Intake Process</h2>
+    <p class="sd">This is the exact flow shown on the site. Every ad and landing page should map to one of these steps as its CTA or context.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="snum">1</div>
+        <div class="st">Insurance & Benefit Check</div>
+        <div class="sd2">We contact your insurance, confirm coverage, explain everything in plain language.</div>
+      </div>
+      <div class="step">
+        <div class="snum">2</div>
+        <div class="st">Initial BCBA Assessment</div>
+        <div class="sd2">A Board Certified Behavior Analyst observes your child and builds a personalized care plan.</div>
+      </div>
+      <div class="step">
+        <div class="snum">3</div>
+        <div class="st">Therapy Where It Helps Most</div>
+        <div class="sd2">In-home, at school, or in the community — wherever your child is most comfortable.</div>
+      </div>
+      <div class="step">
+        <div class="snum">4</div>
+        <div class="st">Ongoing Support & Adjustment</div>
+        <div class="sd2">Regular progress reviews, parent training, and plan updates as your child grows.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<!-- ━━━ SPACING ━━━ -->
+<section class="sec">
+  <div class="w">
+    <p class="ey">09 — Spacing System</p>
+    <h2 class="sh">Breathing Room</h2>
+    <p class="sd">Generous spacing signals calm and quality. ABA families are overwhelmed — the UI should never add to it.</p>
+
+    <div class="sp-table">
+      <div class="sp-row"><span class="sp-tok">--space-xs</span><div class="sp-bar-w"><div class="sp-bar" style="width:4%"></div></div><span class="sp-val">4px</span></div>
+      <div class="sp-row"><span class="sp-tok">--space-sm</span><div class="sp-bar-w"><div class="sp-bar" style="width:8%"></div></div><span class="sp-val">8px</span></div>
+      <div class="sp-row"><span class="sp-tok">--space-md</span><div class="sp-bar-w"><div class="sp-bar" style="width:16%"></div></div><span class="sp-val">16px</span></div>
+      <div class="sp-row"><span class="sp-tok">--space-lg</span><div class="sp-bar-w"><div class="sp-bar" style="width:28%"></div></div><span class="sp-val">28px</span></div>
+      <div class="sp-row"><span class="sp-tok">--space-xl</span><div class="sp-bar-w"><div class="sp-bar" style="width:48%"></div></div><span class="sp-val">48px</span></div>
+      <div class="sp-row"><span class="sp-tok">--space-2xl</span><div class="sp-bar-w"><div class="sp-bar" style="width:72%"></div></div><span class="sp-val">72px</span></div>
+      <div class="sp-row"><span class="sp-tok">--space-3xl</span><div class="sp-bar-w"><div class="sp-bar" style="width:100%"></div></div><span class="sp-val">100px</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━ FOOTER ━━━ -->
+<footer class="footer">
+  <div>
+    <div class="fl">Golden Care <em>Therapy</em></div>
+    <div class="fs">Brand Guide · Managed by Connective Media Group · thecmg.co</div>
+  </div>
+  <div class="fm">
+    VERSION 3.0 · 2026<br>
+    GOLDENCARETHERAPY.COM<br>
+    NJ · NY · FL · GA · IN
+  </div>
+</footer>
+
+</body>
+</html>
